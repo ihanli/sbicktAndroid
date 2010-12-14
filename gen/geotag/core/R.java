@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.geotag.core;
+package geotag.core;
 
 public final class R {
     public static final class attr {

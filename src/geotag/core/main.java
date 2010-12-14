@@ -1,7 +1,10 @@
-package com.geotag.core;
+package geotag.core;
+
+import geotag.core.R;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class main extends Activity {
     /** Called when the activity is first created. */
