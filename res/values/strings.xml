@@ -3,4 +3,5 @@
     <string name="hello">Hello World, main!</string>
     <string name="app_name">s\'bickt</string>
     <string name="serverIndexUrl">http://sbickt.heroku.com/geotags.kml</string>
+    
 </resources>
