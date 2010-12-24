@@ -16,6 +16,10 @@ public class GeoTag {
 	}
 
 	public void setText(String text) {
+		if(text == this.text){
+			return;
+		}
+		
 		this.text = text;
 	}
 
