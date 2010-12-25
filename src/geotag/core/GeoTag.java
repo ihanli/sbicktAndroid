@@ -11,6 +11,12 @@ public class GeoTag {
 		visibility = TagVisibility.PRIVATE;
 	}
 	
+	public GeoTag(Point3D point, String content, TagVisibility visibility){
+		coordinates = point;
+		text = content;
+		this.visibility = visibility;
+	}
+	
 	public String getText() {
 		return text;
 	}
