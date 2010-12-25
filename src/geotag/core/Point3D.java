@@ -10,4 +10,10 @@ public class Point3D {
 		y = e;
 		z = f;
 	}
+	
+	public Point3D(double coordinates[]){
+		x = coordinates[0];
+		y = coordinates[1];
+		z = coordinates[2];
+	}
 }
