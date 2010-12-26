@@ -13,23 +13,23 @@ public class KmlParser {
 	private DocumentBuilder db;
 	private Document kml;
 	
-	public KmlParser(){
+	public KmlParser() throws Exception{
 		try{
 			dbf = DocumentBuilderFactory.newInstance();
 			db = dbf.newDocumentBuilder();
 		}
 		catch(Exception e){
-			System.out.println("KmlParser -> Constructor: " + e);
+			throw new Exception("KmlParser -> Constructor: " + e);
 		}
 	}
 	
-	public void requestKml(String url){
+	public void requestKml(String url) throws Exception{
 		try {
 			kml = db.parse(url);
 			kml.getDocumentElement().normalize();
 		}
 		catch (Exception e) {
-			System.out.println("KmlParser -> requestKml: " + e);
+			throw new Exception("KmlParser -> requestKml: " + e);
 		}
 	}
 	
