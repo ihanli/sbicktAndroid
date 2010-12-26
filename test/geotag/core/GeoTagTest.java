@@ -5,11 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GeoTagTest {
-	GeoTag sbickerl;
 
 	@Test
 	public void testGeoTag() {
-		sbickerl = new GeoTag();
+		GeoTag sbickerl = new GeoTag();
 		
 		assertEquals(0, sbickerl.getX(), 0);
 		assertEquals(0, sbickerl.getY(), 0);
@@ -19,7 +18,10 @@ public class GeoTagTest {
 		assertEquals(TagVisibility.PRIVATE, sbickerl.getVisibility());
 	}
 
+	@Test
 	public void testGetCoordinates(){
+		GeoTag sbickerl = new GeoTag();
+
 		assertEquals("X: " + sbickerl.getX() + ", Y: " + sbickerl.getY() + ", Z: " + sbickerl.getZ(), sbickerl.getCoordinates());
 	}
 }
