@@ -22,16 +22,16 @@ public class HttpHelper {
 		serverURL = url;
 	}
 
-	public String get_serverURL() {
+	public String getURL() {
 		return serverURL;
 	}
 
-	public void set_serverURL(String serverURL) {
-		if(serverURL == this.serverURL) {
+	public void setURL(String url) {
+		if(url == serverURL) {
 			return;
 		}
 		
-		this.serverURL = serverURL;
+		serverURL = url;
 		
 		try {
 			clientRequest.setURI(new URI(serverURL));
@@ -41,7 +41,7 @@ public class HttpHelper {
 		}
 	}
 	
-	public String getStream() {
+	public String execute() {
 		BufferedReader reader;
 		InputStream serverStream;
 		HttpResponse serverResponse;
