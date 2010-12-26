@@ -9,20 +9,11 @@ import junit.framework.Assert;
 import static org.junit.Assert.*;
 
 public class KmlParserTest {
-	private KmlParser myParser;
 	
 	@Test
-	public void testKmlParser(){
-		try{
-			myParser = new KmlParser();
-		}
-		catch(Exception e){
-			Assert.fail(e.toString());
-		}
-	}
-	
 	public void testRequestKml(){
 		try{
+			KmlParser myParser = new KmlParser();
 			myParser.requestKml("http://localhost:3000/geotags.kml");
 		}
 		catch(Exception e){
@@ -30,22 +21,39 @@ public class KmlParserTest {
 		}
 	}
 	
+	@Test
 	public void testGenerateObjects(){
-		Queue<GeoTag> myObjects = myParser.generateObjects();
-		GeoTag temp = new GeoTag();
+		KmlParser myParser;
 		
-		assertNotNull(myObjects);
-		
-		while (true) {
-			try {
-				temp = myObjects.remove();
-				System.out.println(temp.getContent());
-				System.out.println(temp.getCoordinates());
-				System.out.println(temp.getVisibility());
+		try {
+			myParser = new KmlParser();
+			myParser.requestKml("http://localhost:3000/geotags.kml");
+
+			Queue<GeoTag> myObjects = myParser.generateObjects();
+			
+			assertNotNull(myObjects);
+			assertFalse(myObjects.isEmpty());
+			
+			GeoTag temp = new GeoTag();
+			
+			assertNotNull(temp);
+			
+			while (true) {
+				try {
+					temp = myObjects.remove();
+					System.out.println(temp.getOwner());
+					System.out.println(temp.getContent());
+					System.out.println(temp.getCoordinates());
+					System.out.println(temp.getVisibility());
+					System.out.print("\n");
+				}
+				catch (NoSuchElementException e) {
+					break;
+				}
 			}
-			catch (NoSuchElementException e) {
-				Assert.fail(e.toString());
-			}
+		}
+		catch (Exception e) {
+			Assert.fail(e.toString());
 		}
 	}
 }
