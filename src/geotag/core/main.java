@@ -1,6 +1,7 @@
 package geotag.core;
 
 import geotag.core.R;
+import geotag.example.sbickt.CameraView;
 
 import android.app.Activity;
 import android.content.Intent;
