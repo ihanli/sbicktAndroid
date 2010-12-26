@@ -1,7 +1,7 @@
 package geotag.core;
 
 public class Point3D {
-	public Double x;
+	public double x;
 	public double y;
 	public double z;
 	
