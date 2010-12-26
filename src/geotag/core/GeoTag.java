@@ -13,9 +13,10 @@ public class GeoTag {
 		visibility = TagVisibility.PRIVATE;
 	}
 	
-	public GeoTag(Point3D point, String content, TagVisibility visibility){
+	public GeoTag(Point3D point, String owner, String content, TagVisibility visibility){
 		coordinates = point;
 		this.content = content;
+		setOwner(owner);
 		this.visibility = visibility;
 	}
 	
