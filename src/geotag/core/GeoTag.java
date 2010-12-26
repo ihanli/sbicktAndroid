@@ -2,31 +2,33 @@ package geotag.core;
 
 public class GeoTag {
 	private Point3D coordinates;
-	private String text;
+	private String content;
+	private String owner;
 	private TagVisibility visibility;
 
 	public GeoTag(){
+		setOwner(null);
 		coordinates = new Point3D(0.0, 0.0, 0.0);
-		text = null;
+		content = null;
 		visibility = TagVisibility.PRIVATE;
 	}
 	
 	public GeoTag(Point3D point, String content, TagVisibility visibility){
 		coordinates = point;
-		text = content;
+		this.content = content;
 		this.visibility = visibility;
 	}
 	
-	public String getText() {
-		return text;
+	public String getContent() {
+		return content;
 	}
 
-	public void setText(String text) {
-		if(text == this.text){
+	public void setContent(String text) {
+		if(text == content){
 			return;
 		}
 		
-		this.text = text;
+		content = text;
 	}
 
 	public TagVisibility getVisibility() {
@@ -75,5 +77,21 @@ public class GeoTag {
 	
 	public Double getZ(){
 		return coordinates.z;
+	}
+	
+	public String getCoordinates(){
+		return "X: " + coordinates.x + ", Y: " + coordinates.y + ", Z: " + coordinates.z;
+	}
+
+	public void setOwner(String owner) {
+		if(owner == this.owner){
+			return;
+		}
+		
+		this.owner = owner;
+	}
+
+	public String getOwner() {
+		return owner;
 	}
 }
