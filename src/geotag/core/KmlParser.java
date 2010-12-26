@@ -32,32 +32,30 @@ public class KmlParser {
 			throw new Exception("KmlParser -> requestKml: " + e);
 		}
 	}
-	
+
 	public Queue<GeoTag> generateObjects(){
 		String user, content, coordinates;
 		double[] geoData = new double[3];
-		Node object;
 		Element listElement;
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
-		NodeList pointList;
+		Element pointElement;
 		NodeList objectList = kml.getElementsByTagName("Placemark");
-		
+
 		for(int i = 0;i < objectList.getLength();i++){
-			object = objectList.item(i);
+			listElement = (Element) objectList.item(i);
 
-			listElement = (Element) object;
+			user = listElement.getElementsByTagName("name").item(0).getFirstChild().getNodeValue();
 
-			user = listElement.getElementsByTagName("name").item(0).getNodeValue();
-			content = listElement.getElementsByTagName("description").item(0).getNodeValue();
-			
-			pointList = listElement.getElementsByTagName("Point");
-			coordinates = pointList.item(0).getNodeValue();
-			
+			content = listElement.getElementsByTagName("description").item(0).getFirstChild().getNodeValue();
+
+			pointElement = (Element) listElement.getElementsByTagName("Point").item(0);
+			coordinates = pointElement.getElementsByTagName("coordinates").item(0).getFirstChild().getNodeValue();
+
 			geoData[0] = Double.parseDouble(coordinates.substring(0, coordinates.indexOf(",")));
 			geoData[1] = Double.parseDouble(coordinates.substring(coordinates.indexOf(",") + 1, coordinates.lastIndexOf(",")));
 			geoData[2] = Double.parseDouble(coordinates.substring(coordinates.lastIndexOf(",") + 1, coordinates.length()));
 			
-			listOfGeoTags.add(new GeoTag(new Point3D(geoData), content, TagVisibility.PRIVATE));
+			listOfGeoTags.add(new GeoTag(new Point3D(geoData), user, content, TagVisibility.PRIVATE));
 		}
 		
 		return listOfGeoTags;
