@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="New Post" android:id="@+id/newPost"></item>
+<item android:title="Main Menu" android:id="@+id/sbicktmenu"><menu><item android:id="@+id/newPost" android:title="New Post" android:icon="@drawable/bicks"></item>
+<item android:id="@+id/profile" android:title="Show Profile" android:icon="@drawable/profil"></item>
+<item android:id="@+id/archive" android:title="Show Archive" android:icon="@drawable/archiv"></item>
+<item android:id="@+id/friends" android:title="List Friends" android:icon="@drawable/freunde"></item>
+</menu>
+</item>
 </menu>
