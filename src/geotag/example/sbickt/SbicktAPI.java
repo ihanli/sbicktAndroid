@@ -11,15 +11,15 @@ import java.util.Queue;
 import org.apache.http.NameValuePair;
 
 public class SbicktAPI {
-	public void newGeoTag(List<NameValuePair> geoTagData) throws Exception{
-		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.1"));
+	public static void newGeoTag(List<NameValuePair> geoTagData) throws Exception{
+		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.2"));
 		
 		if(!httpConnection.POSTRequest(geoTagData)){
 			throw new Exception("SbicktAPI -> newGeoTag: Failed to add new geo tag");
 		}
 	}
 	
-	public Queue<GeoTag> getGeoTags() throws Exception{
+	public static Queue<GeoTag> getGeoTags() throws Exception{
 		KmlParser kp = new KmlParser();
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		Exception up = new Exception("SbicktAPI -> getGeoTags: No data from server");
