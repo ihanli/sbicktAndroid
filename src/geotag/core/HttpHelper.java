@@ -14,6 +14,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 
 public class HttpHelper {
 	private String serverURL;
@@ -77,7 +78,7 @@ public class HttpHelper {
 		//TODO: Check if data was inserted correctly (HTTP Status Code)
 		
 		try {
-			clientPostRequest.setEntity(new UrlEncodedFormEntity(geoTagData));
+			clientPostRequest.setEntity(new UrlEncodedFormEntity(geoTagData, HTTP.UTF_8));
 			serverResponse = client.execute(clientPostRequest);
 		}
 		catch (Exception e) {
