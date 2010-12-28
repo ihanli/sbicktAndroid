@@ -2,6 +2,8 @@ package geotag.core;
 
 import static org.junit.Assert.*;
 
+import geotag.example.sbickt.Strings;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +25,14 @@ public class HttpHelperTest {
 		assertNotNull(myHelper.GETRequest());
 	}
 
-	@Test
+//	@Test
 	public void testPOSTRequest() {
-		HttpHelper myHelper = new HttpHelper("http://localhost:3000/geotags/new");
-		List<NameValuePair> myData = new ArrayList<NameValuePair>(2);
+		HttpHelper myHelper = new HttpHelper(Strings.getString("SbicktAPI.2"));
+		List<NameValuePair> myData = new ArrayList<NameValuePair>();
 		
-		myData.add(new BasicNameValuePair("x", "2.548"));
-		myData.add(new BasicNameValuePair("y", "2.548"));
-		myData.add(new BasicNameValuePair("z", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[x]", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[y]", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[z]", "2.548"));
 		
 		assertTrue(myHelper.POSTRequest(myData));
 	}

@@ -1,5 +1,7 @@
 package geotag.core;
 
+import geotag.example.sbickt.Strings;
+
 import java.util.NoSuchElementException;
 import java.util.Queue;
 
@@ -27,7 +29,7 @@ public class KmlParserTest {
 		
 		try {
 			myParser = new KmlParser();
-			myParser.requestKml("http://localhost:3000/geotags.kml");
+			myParser.requestKml(Strings.getString("SbicktAPI.0"));
 
 			Queue<GeoTag> myObjects = myParser.generateObjects();
 			
@@ -41,11 +43,7 @@ public class KmlParserTest {
 			while (true) {
 				try {
 					temp = myObjects.remove();
-					System.out.println(temp.getOwner());
-					System.out.println(temp.getContent());
-					System.out.println(temp.getCoordinates());
-					System.out.println(temp.getVisibility());
-					System.out.print("\n");
+					temp.prettyPrint();
 				}
 				catch (NoSuchElementException e) {
 					break;
