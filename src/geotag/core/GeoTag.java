@@ -95,4 +95,12 @@ public class GeoTag {
 	public String getOwner() {
 		return owner;
 	}
+	
+	public void prettyPrint(){
+		System.out.println(getOwner());
+		System.out.println(getContent());
+		System.out.println(getCoordinates());
+		System.out.println(getVisibility());
+		System.out.print("\n");
+	}
 }
