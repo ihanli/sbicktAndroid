@@ -48,4 +48,20 @@ public class SbicktAPITest {
 			fail(e.toString());
 		}
 	}
+	
+	@Test
+	public void testDeleteGeoTag(){
+		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
+		
+		try {
+			listOfGeoTags = SbicktAPI.getGeoTags();
+
+			for(int i = 0;i < listOfGeoTags.size();i++){
+				SbicktAPI.deleteGeoTag(listOfGeoTags.poll().getId());
+			}
+		}
+		catch (Exception e) {
+			fail(e.toString());
+		}
+	}
 }

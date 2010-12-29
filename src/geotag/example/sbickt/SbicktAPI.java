@@ -15,7 +15,7 @@ public class SbicktAPI {
 		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.2"));
 		
 		if(!httpConnection.POSTRequest(geoTagData)){
-			throw new Exception("SbicktAPI -> newGeoTag: Failed to add new geo tag");
+			throw new Exception("SbicktAPI -> newGeoTag: Failed to add new geotag");
 		}
 	}
 	
@@ -36,6 +36,15 @@ public class SbicktAPI {
 		}
 		else{
 			return listOfGeoTags;
+		}
+	}
+	
+	public static void deleteGeoTag(Integer geoTagId) throws Exception{
+		String deleteURL = Strings.getString("SbicktAPI.2") + geoTagId.toString();
+		HttpHelper httpConnection = new HttpHelper(deleteURL);
+		
+		if(!httpConnection.DELETERequest(geoTagId)){
+			throw new Exception("SbicktAPI -> deleteGeoTag: Failed to delete geotag");
 		}
 	}
 }
