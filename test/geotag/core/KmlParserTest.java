@@ -16,7 +16,7 @@ public class KmlParserTest {
 	public void testRequestKml(){
 		try{
 			KmlParser myParser = new KmlParser();
-			myParser.requestKml("http://localhost:3000/geotags.kml");
+			myParser.requestKml(Strings.getString("SbicktAPI.0"));
 		}
 		catch(Exception e){
 			Assert.fail(e.toString());
@@ -34,8 +34,7 @@ public class KmlParserTest {
 			Queue<GeoTag> myObjects = myParser.generateObjects();
 			
 			assertNotNull(myObjects);
-			assertFalse(myObjects.isEmpty());
-			
+	
 			GeoTag temp = new GeoTag();
 			
 			assertNotNull(temp);

@@ -35,6 +35,7 @@ public class KmlParser {
 
 	public Queue<GeoTag> generateObjects(){
 		String user, content, coordinates;
+		Integer id;
 		double[] geoData = new double[3];
 		Element listElement;
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
@@ -43,6 +44,8 @@ public class KmlParser {
 
 		for(int i = 0;i < objectList.getLength();i++){
 			listElement = (Element) objectList.item(i);
+			
+			id = Integer.parseInt(listElement.getAttribute("id"));
 
 			user = listElement.getElementsByTagName("name").item(0).getFirstChild().getNodeValue();
 
@@ -60,7 +63,7 @@ public class KmlParser {
 				continue;
 			}
 			
-			listOfGeoTags.add(new GeoTag(new Point3D(geoData), user, content, TagVisibility.PRIVATE));
+			listOfGeoTags.add(new GeoTag(id, new Point3D(geoData), user, content, TagVisibility.PRIVATE));
 		}
 		
 		return listOfGeoTags;
