@@ -22,6 +22,6 @@ public class GeoTagTest {
 	public void testGetCoordinates(){
 		GeoTag sbickerl = new GeoTag();
 
-		assertEquals("X: " + sbickerl.getX() + ", Y: " + sbickerl.getY() + ", Z: " + sbickerl.getZ(), sbickerl.getCoordinates());
+		assertEquals("X: " + sbickerl.getX() + ", Y: " + sbickerl.getY() + ", Z: " + sbickerl.getZ(), sbickerl.coordinatesToString());
 	}
 }

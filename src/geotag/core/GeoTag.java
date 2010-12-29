@@ -5,15 +5,18 @@ public class GeoTag {
 	private String content;
 	private String owner;
 	private TagVisibility visibility;
+	private Integer id;
 
 	public GeoTag(){
 		setOwner(null);
 		coordinates = new Point3D(0.0, 0.0, 0.0);
 		content = null;
 		visibility = TagVisibility.PRIVATE;
+		id = null;
 	}
 	
-	public GeoTag(Point3D point, String owner, String content, TagVisibility visibility){
+	public GeoTag(Integer id, Point3D point, String owner, String content, TagVisibility visibility){
+		this.id = id;
 		coordinates = point;
 		this.content = content;
 		setOwner(owner);
@@ -80,7 +83,7 @@ public class GeoTag {
 		return coordinates.z;
 	}
 	
-	public String getCoordinates(){
+	public String coordinatesToString(){
 		return "X: " + coordinates.x + ", Y: " + coordinates.y + ", Z: " + coordinates.z;
 	}
 
@@ -96,10 +99,23 @@ public class GeoTag {
 		return owner;
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		if(this.id == id){
+			return;
+		}
+		
+		this.id = id;
+	}
+
 	public void prettyPrint(){
+		System.out.println(getId());
 		System.out.println(getOwner());
 		System.out.println(getContent());
-		System.out.println(getCoordinates());
+		System.out.println(coordinatesToString());
 		System.out.println(getVisibility());
 		System.out.print("\n");
 	}
