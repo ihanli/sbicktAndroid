@@ -32,7 +32,7 @@ public class HttpHelper {
 	public HttpHelper(String url){
 		clientGetRequest = new HttpGet(url);
 		clientPostRequest = new HttpPost(url);
-		
+
 		serverURL = url;
 	}
 

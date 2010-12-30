@@ -3,6 +3,7 @@ package geotag.example.sbickt;
 import geotag.core.GeoTag;
 import geotag.core.HttpHelper;
 import geotag.core.KmlParser;
+import geotag.example.sbickt.Strings;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -19,6 +19,9 @@ public class SbicktAPITest {
 	public void testNewGeoTag() {
 		List<NameValuePair> myData = new ArrayList<NameValuePair>();
 
+		myData.add(new BasicNameValuePair("sbickerl[owner]", "ismail"));
+		myData.add(new BasicNameValuePair("sbickerl[content]", "test post"));
+		myData.add(new BasicNameValuePair("sbickerl[visibility]", "private"));
 		myData.add(new BasicNameValuePair("geotag[x]", "2.548"));
 		myData.add(new BasicNameValuePair("geotag[y]", "2.548"));
 		myData.add(new BasicNameValuePair("geotag[z]", "2.548"));
