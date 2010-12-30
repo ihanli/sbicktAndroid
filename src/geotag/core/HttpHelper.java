@@ -96,7 +96,7 @@ public class HttpHelper {
 	
 	public Boolean DELETERequest(Integer geoTagId){
 		try{
-			String deleteURL = Strings.getString("SbicktAPI.2") + geoTagId.toString();
+			String deleteURL = Strings.getString("SbicktAPI.0") + geoTagId.toString();
 			List<NameValuePair> geoTagData = new ArrayList<NameValuePair>();
 			geoTagData.add(new BasicNameValuePair("id", geoTagId.toString()));
 			

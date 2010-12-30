@@ -3,6 +3,7 @@ package geotag.example.sbickt;
 import geotag.core.GeoTag;
 import geotag.core.HttpHelper;
 import geotag.core.KmlParser;
+import geotag.core.Point3D;
 import geotag.example.sbickt.Strings;
 
 import java.util.LinkedList;
@@ -13,19 +14,19 @@ import org.apache.http.NameValuePair;
 
 public class SbicktAPI {
 	public static void newGeoTag(List<NameValuePair> geoTagData) throws Exception{
-		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.2"));
+		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.0"));
 		
 		if(!httpConnection.POSTRequest(geoTagData)){
 			throw new Exception("SbicktAPI -> newGeoTag: Failed to add new geotag");
 		}
 	}
 	
-	public static Queue<GeoTag> getGeoTags() throws Exception{
+	public static Queue<GeoTag> getGeoTags(Point3D me) throws Exception{
 		KmlParser kp = new KmlParser();
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		Exception up = new Exception("SbicktAPI -> getGeoTags: No data from server");
 		
-		kp.requestKml(Strings.getString("SbicktAPI.0"));
+		kp.requestKml(Strings.getString("SbicktAPI.2") + "?coordinates[x]=" + me.x + "&coordinates[y]=" + me.y);
 		
 		listOfGeoTags = kp.generateObjects();
 		

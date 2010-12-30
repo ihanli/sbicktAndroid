@@ -3,6 +3,7 @@ package geotag.example.sbickt;
 import static org.junit.Assert.*;
 
 import geotag.core.GeoTag;
+import geotag.core.Point3D;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -39,11 +40,11 @@ public class SbicktAPITest {
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		
 		try {
-			listOfGeoTags = SbicktAPI.getGeoTags();
+			listOfGeoTags = SbicktAPI.getGeoTags(new Point3D(2.548, 2.548, 0));
 			
 			assertNotNull(listOfGeoTags);
 			
-			for(int i = 0;i < listOfGeoTags.size();i++){
+			while(!listOfGeoTags.isEmpty()){
 				listOfGeoTags.poll().prettyPrint();
 			}
 		}
@@ -57,9 +58,9 @@ public class SbicktAPITest {
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		
 		try {
-			listOfGeoTags = SbicktAPI.getGeoTags();
+			listOfGeoTags = SbicktAPI.getGeoTags(new Point3D(2.548, 2.548, 0));
 
-			for(int i = 0;i < listOfGeoTags.size();i++){
+			while(!listOfGeoTags.isEmpty()){
 				SbicktAPI.deleteGeoTag(listOfGeoTags.poll().getId());
 			}
 		}
