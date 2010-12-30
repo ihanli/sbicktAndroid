@@ -1,5 +1,7 @@
 package geotag.core;
 
+import geotag.example.sbickt.Strings;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -36,6 +38,7 @@ public class KmlParser {
 	public Queue<GeoTag> generateObjects(){
 		String user, content, coordinates;
 		Integer id;
+		TagVisibility visibility;
 		double[] geoData = new double[3];
 		Element listElement;
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
@@ -46,6 +49,16 @@ public class KmlParser {
 			listElement = (Element) objectList.item(i);
 			
 			id = Integer.parseInt(listElement.getAttribute("id"));
+
+			if(listElement.getAttribute("visibility").toString().equalsIgnoreCase(Strings.getString("Visibility.0"))){
+				visibility = TagVisibility.PRIVATE;
+			}
+			else if(listElement.getAttribute("visibility").equalsIgnoreCase(Strings.getString("Visibility.1"))){
+				visibility = TagVisibility.PROTECTED;
+			}
+			else{
+				visibility = TagVisibility.PUBLIC;
+			}
 
 			user = listElement.getElementsByTagName("name").item(0).getFirstChild().getNodeValue();
 
@@ -62,8 +75,8 @@ public class KmlParser {
 			catch (NumberFormatException e) {
 				continue;
 			}
-			
-			listOfGeoTags.add(new GeoTag(id, new Point3D(geoData), user, content, TagVisibility.PRIVATE));
+
+			listOfGeoTags.add(new GeoTag(id, new Point3D(geoData), user, content, visibility));
 		}
 		
 		return listOfGeoTags;
