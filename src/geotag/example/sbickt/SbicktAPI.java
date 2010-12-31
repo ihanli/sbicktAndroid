@@ -26,7 +26,7 @@ public class SbicktAPI {
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		Exception up = new Exception("SbicktAPI -> getGeoTags: No data from server");
 		
-		kp.requestKml(Strings.getString("SbicktAPI.2") + "?coordinates[x]=" + me.x + "&coordinates[y]=" + me.y);
+		kp.requestKml(Strings.getString("SbicktAPI.1") + "?coordinates[x]=" + me.x + "&coordinates[y]=" + me.y);
 		
 		listOfGeoTags = kp.generateObjects();
 		
@@ -42,10 +42,10 @@ public class SbicktAPI {
 	}
 	
 	public static void deleteGeoTag(Integer geoTagId) throws Exception{
-		String deleteURL = Strings.getString("SbicktAPI.2") + geoTagId.toString();
-		HttpHelper httpConnection = new HttpHelper(deleteURL);
+//		String deleteURL = Strings.getString("SbicktAPI.2") + geoTagId.toString();
+		HttpHelper httpConnection = new HttpHelper(Strings.getString("SbicktAPI.0"), geoTagId.toString());
 		
-		if(!httpConnection.DELETERequest(geoTagId)){
+		if(!httpConnection.DELETERequest()){
 			throw new Exception("SbicktAPI -> deleteGeoTag: Failed to delete geotag");
 		}
 	}
