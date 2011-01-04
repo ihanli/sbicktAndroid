@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+	<include layout="@layout/background" />
+	
+	<ImageView android:id="@+id/profile_picture"
+		android:layout_below="@+id/background_left"
+		android:src="@drawable/profile_picture_default"
+		android:layout_width="@+dimen/profile_picture"
+		android:layout_height="@+dimen/profile_picture" android:layout_margin="10dp">
+		
+	</ImageView>
+	
+	<TextView android:id="@+id/profile_name"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_alignTop="@+id/profile_picture"
+		android:layout_toRightOf="@+id/profile_picture"
+		android:text="Nickname"
+		android:layout_margin="10dp"
+		android:textSize="20sp">
+		
+	</TextView>
+
+	<Button android:id="@+id/profile_picture_edit_button"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:textSize="20sp"
+		android:textColor="#bfbfbf"
+		android:background="@null"
+		android:layout_below="@+id/profile_name"
+		android:layout_alignLeft="@+id/profile_name"
+		android:text="Avatar bearbeiten">
+	</Button>
+	
+	<Button android:id="@+id/profile_logout_button"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:textSize="20sp"
+		android:textColor="#bfbfbf"
+		android:background="@null"
+		android:layout_below="@+id/profile_picture_edit_button"
+		android:layout_alignLeft="@+id/profile_name"
+		android:text="Ausloggen">
+	</Button>
+	
+	<Button android:id="@+id/profile_delete_button"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:textSize="20sp"
+		android:textColor="#bfbfbf"
+		android:background="@null"
+		android:layout_below="@+id/profile_picture"
+		android:layout_alignLeft="@+id/profile_picture"
+		android:text="Profil löschen">
+	</Button>
+	
+</RelativeLayout>

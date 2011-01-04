@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="#ff0000"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+	
+	<RelativeLayout android:id="@+id/in"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:padding="10dp">
+		
+		<ImageButton android:id="@+id/live_view"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:src="@drawable/button_menu_live_view"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size">
+		</ImageButton>
+	
+		<ImageButton android:id="@+id/screenshot"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentRight="true"
+			android:src="@drawable/button_menu_screenshot"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size">
+		</ImageButton>
+		
+		<ImageButton android:id="@+id/menu_in"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:src="@drawable/button_menu_in"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_height"
+			android:layout_width="@dimen/icon_width">
+		</ImageButton>
+		
+	</RelativeLayout>
+
+	<RelativeLayout android:id="@+id/out"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:background="#aaffffff"
+		android:padding="10dp">
+		
+		<ImageButton android:id="@+id/profile"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:layout_marginBottom="0dp"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size"
+			android:src="@drawable/button_menu_profile"
+			android:layout_marginRight="125dp">
+		</ImageButton>
+		
+		<ImageButton android:id="@+id/friends"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size"
+			android:layout_marginBottom="60dp"
+			android:src="@drawable/button_menu_friends"
+			android:layout_marginRight="110dp">
+		</ImageButton>
+		
+		<ImageButton android:id="@+id/archive"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size"
+			android:layout_marginBottom="120dp"
+			android:layout_marginRight="60dp"
+			android:src="@drawable/button_menu_archive">
+		</ImageButton>
+		
+		<ImageButton android:id="@+id/bicks"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="0dp"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size"
+			android:layout_marginBottom="140dp"
+			android:src="@drawable/button_menu_bicks">
+		</ImageButton>
+		
+		<ImageButton android:id="@+id/menu_out"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:src="@drawable/button_menu_out"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_height"
+			android:layout_width="@dimen/icon_width">
+		</ImageButton>
+		
+	</RelativeLayout>
+		
+</RelativeLayout>

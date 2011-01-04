@@ -40,9 +40,9 @@ public class main extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.bicks_view);
         
-        Intent cameraView = new Intent(this, CameraView.class);
-		startActivity(cameraView);
+        //Intent cameraView = new Intent(this, CameraView.class);
+		//startActivity(cameraView);
     }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    
+
+	<ImageView android:id="@+id/background_left"
+		android:layout_alignParentTop="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/background_left"
+		android:layout_alignParentLeft="true"
+		android:adjustViewBounds="true"
+		android:layout_marginLeft="0dp"
+		android:maxHeight="75dp">
+	
+	</ImageView>
+	
+	<ImageView android:id="@+id/background_right"
+		android:layout_alignParentRight="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:src="@drawable/background_right"
+		android:adjustViewBounds="true"
+		android:maxWidth="105dp">
+		
+	</ImageView>
+
+	<ImageButton android:id="@+id/button_back"
+		android:layout_alignParentTop="true"
+		android:src="@drawable/button_back"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="40dp"
+		android:layout_width="50dp">
+		
+	</ImageButton>
+	
+	
+
+</merge>

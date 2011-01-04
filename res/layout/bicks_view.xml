@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+	<include layout="@layout/background" />
+	
+	
+	
+	<EditText android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:gravity="top"
+		android:textSize="16sp"
+		android:textColor="#bfbfbf"
+		android:layout_height="fill_parent"
+		android:background="@drawable/edit_text"
+		android:padding="20dp"
+		android:inputType="textMultiLine"
+		android:layout_below="@+id/background_left"
+		android:layout_marginLeft="10dp"
+		android:layout_marginBottom="10dp"
+		android:id="@+id/new_bicks"
+		android:layout_width="300dp">
+		
+	</EditText>
+	
+	<ImageButton android:id="@+id/category_private"
+		android:src="@drawable/category_private"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="@dimen/icon_small_size"
+		android:layout_width="@dimen/icon_small_size"
+		android:layout_toRightOf="@+id/new_bicks"
+		android:layout_alignTop="@+id/new_bicks"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/category_friends"
+		android:src="@drawable/category_friends"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="@dimen/icon_small_size"
+		android:layout_width="@dimen/icon_small_size"
+		android:layout_toRightOf="@+id/new_bicks"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_below="@+id/category_private">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/category_public"
+		android:src="@drawable/category_public"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="@dimen/icon_small_size"
+		android:layout_width="@dimen/icon_small_size"
+		android:layout_toRightOf="@+id/new_bicks"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_below="@+id/category_friends">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/button_bicks"
+		android:src="@drawable/button_menu_bicks"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="@dimen/icon_size"
+		android:layout_width="@dimen/icon_size"
+		android:layout_marginLeft="5dp"
+		android:layout_toRightOf="@+id/new_bicks"
+		android:layout_alignBottom="@+id/new_bicks">
+	</ImageButton>
+	
+</RelativeLayout>

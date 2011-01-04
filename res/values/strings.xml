@@ -4,4 +4,10 @@
     <string name="app_name">s\'bickt</string>
     <string name="serverIndexUrl">http://sbickt.heroku.com/geotags.kml</string>
     
+    <dimen name="icon_size">60dp</dimen>
+	<dimen name="icon_height">100dp</dimen>
+	<dimen name="icon_width">61dp</dimen>
+	<dimen name="icon_small_size">35dp</dimen>
+	<dimen name="profile_picture">150dp</dimen>
+    
 </resources>
