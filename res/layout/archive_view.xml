@@ -5,7 +5,9 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-	<include layout="@layout/background" />
+	<geotag.example.sbickt.BackgroundView
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" />
 	
 	<ListView android:id="@+id/archive_list"
 		android:layout_alignParentBottom="true"
@@ -13,9 +15,8 @@
 		android:layout_height="fill_parent"
 		android:padding="20dp"
 		android:inputType="textMultiLine"
-		android:layout_below="@+id/background_left"
 		android:layout_marginLeft="10dp"
-		android:layout_marginBottom="10dp" android:layout_width="350dp" android:background="#ff0000">
+		android:layout_marginBottom="10dp" android:layout_width="350dp" android:background="#ff0000" android:layout_marginTop="75dp">
 		
 	</ListView>
 	
@@ -27,8 +28,7 @@
 		android:layout_width="@dimen/icon_small_size"
 		android:layout_marginLeft="10dp"
 		android:layout_marginBottom="10dp"
-		android:layout_toLeftOf="@+id/category_friends"
-		android:layout_above="@+id/archive_list">
+		android:layout_toLeftOf="@+id/category_friends" android:layout_alignTop="@+id/category_public">
 		
 	</ImageButton>
 	
@@ -40,8 +40,7 @@
 		android:layout_width="@dimen/icon_small_size"
 		android:layout_marginLeft="10dp"
 		android:layout_marginBottom="10dp"
-		android:layout_toLeftOf="@+id/category_public"
-		android:layout_above="@+id/archive_list">
+		android:layout_toLeftOf="@+id/category_public" android:layout_alignTop="@+id/category_public">
 		
 	</ImageButton>
 	
@@ -53,8 +52,7 @@
 		android:layout_width="@dimen/icon_small_size"
 		android:layout_marginLeft="10dp"
 		android:layout_marginBottom="10dp"
-		android:layout_above="@+id/archive_list"
-		android:layout_alignRight="@+id/archive_list">
+		android:layout_alignRight="@+id/archive_list" android:layout_alignParentTop="true" android:layout_marginTop="30dp">
 		
 	</ImageButton>
 	

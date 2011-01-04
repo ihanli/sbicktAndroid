@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<ImageButton android:id="@+id/map_view"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+		android:src="@drawable/button_menu_map_view"
+		android:background="@null"
+		android:scaleType="fitCenter"
+		android:layout_height="@dimen/icon_size"
+		android:layout_width="@dimen/icon_size">
+	</ImageButton>
+
+</merge>

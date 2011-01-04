@@ -5,13 +5,15 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-	<include layout="@layout/background" />
+	<geotag.example.sbickt.BackgroundView
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" />
 	
 	<ImageView android:id="@+id/profile_picture"
 		android:layout_below="@+id/background_left"
 		android:src="@drawable/profile_picture_default"
 		android:layout_width="@+dimen/profile_picture"
-		android:layout_height="@+dimen/profile_picture" android:layout_margin="10dp">
+		android:layout_height="@+dimen/profile_picture" android:layout_marginBottom="10dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginTop="75dp">
 		
 	</ImageView>
 	

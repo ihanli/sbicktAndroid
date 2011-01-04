@@ -28,7 +28,8 @@
 package geotag.core;
 
 import geotag.core.R;
-import geotag.example.sbickt.CameraView;
+import geotag.example.sbickt.CameraActivity;
+import geotag.example.sbickt.MenuView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,6 +40,7 @@ public class main extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bicks_view);
         

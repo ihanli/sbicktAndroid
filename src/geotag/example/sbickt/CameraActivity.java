@@ -28,20 +28,24 @@
 package geotag.example.sbickt;
 
 import geotag.core.R;
-import geotag.core.R.id;
-import geotag.core.R.layout;
 
 import java.io.IOException;
+import java.util.zip.Inflater;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 
-public class CameraView extends Activity implements SurfaceHolder.Callback {
+public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 	
 	private Camera mCamera;
 	private SurfaceHolder mSurfaceHolder;
@@ -52,7 +56,11 @@ public class CameraView extends Activity implements SurfaceHolder.Callback {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getWindow().setFormat(PixelFormat.TRANSLUCENT);
+
 		setContentView(R.layout.camera_view);
+		
+		((ImageButton) findViewById(R.id.live_view)).setVisibility(View.INVISIBLE);
+				
 		mSurfaceView = (SurfaceView) findViewById(R.id.surface);
 		
 		mSurfaceHolder = mSurfaceView.getHolder();

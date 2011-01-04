@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-	android:background="#ff0000"
     android:focusable="true"
     android:focusableInTouchMode="true">
 	
@@ -13,6 +12,16 @@
 		android:layout_width="fill_parent"
 		android:padding="10dp">
 		
+		<ImageButton android:id="@+id/map_view"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:src="@drawable/button_menu_map_view"
+			android:background="@null"
+			android:scaleType="fitCenter"
+			android:layout_height="@dimen/icon_size"
+			android:layout_width="@dimen/icon_size">
+		</ImageButton>
+		
 		<ImageButton android:id="@+id/live_view"
 			android:layout_alignParentTop="true"
 			android:layout_alignParentLeft="true"
@@ -22,7 +31,7 @@
 			android:layout_height="@dimen/icon_size"
 			android:layout_width="@dimen/icon_size">
 		</ImageButton>
-	
+		
 		<ImageButton android:id="@+id/screenshot"
 			android:layout_alignParentTop="true"
 			android:layout_alignParentRight="true"

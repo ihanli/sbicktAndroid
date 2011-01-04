@@ -5,7 +5,9 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-	<include layout="@layout/background" />
+	<geotag.example.sbickt.BackgroundView
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" />
 	
 	<ListView android:id="@+id/archive_list"
 		android:layout_alignParentBottom="true"
@@ -13,9 +15,8 @@
 		android:layout_height="fill_parent"
 		android:padding="20dp"
 		android:inputType="textMultiLine"
-		android:layout_below="@+id/background_left"
 		android:layout_marginLeft="10dp"
-		android:layout_marginBottom="10dp" android:layout_width="350dp" android:background="#ff0000">
+		android:layout_marginBottom="10dp" android:layout_width="350dp" android:background="#ff0000" android:layout_marginTop="75dp">
 		
 	</ListView>
 	
@@ -23,8 +24,7 @@
 		android:textColor="#bfbfbf"
 		android:background="@drawable/edit_text"
 		android:inputType="text"
-		android:id="@+id/new_bicks"
-		android:layout_toRightOf="@+id/background_left" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_margin="10dp" android:padding="15dp" android:gravity="left|center_vertical">
+		android:layout_height="wrap_content" android:layout_margin="10dp" android:padding="15dp" android:gravity="left|center_vertical" android:id="@+id/search_friends" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_width="230dp">
 		
 	</EditText>
 	
