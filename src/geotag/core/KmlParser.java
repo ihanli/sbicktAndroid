@@ -27,15 +27,18 @@
 
 package geotag.core;
 
-import geotag.example.sbickt.Strings;
-
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import android.util.Log;
 
 public class KmlParser {
 	private DocumentBuilderFactory dbf;
@@ -52,12 +55,14 @@ public class KmlParser {
 		}
 	}
 	
-	public void requestKml(String url) throws Exception{
+	public void requestKml(String protocol, String host, int port, String folder) throws Exception{
 		try {
-			kml = db.parse(url);
+			
+			kml = db.parse(new URL(protocol, host, port, folder).openConnection().getInputStream());
 			kml.getDocumentElement().normalize();
 		}
 		catch (Exception e) {
+			Log.v("alex", e.toString());
 			throw new Exception("KmlParser -> requestKml: " + e);
 		}
 	}
@@ -77,10 +82,10 @@ public class KmlParser {
 			
 			id = Integer.parseInt(listElement.getAttribute("id"));
 
-			if(listElement.getAttribute("visibility").toString().equalsIgnoreCase(Strings.getString("Visibility.0"))){
+			if(listElement.getAttribute("visibility").toString().equalsIgnoreCase(Properties.VISIBILITY_0)){
 				visibility = TagVisibility.PRIVATE;
 			}
-			else if(listElement.getAttribute("visibility").equalsIgnoreCase(Strings.getString("Visibility.1"))){
+			else if(listElement.getAttribute("visibility").equalsIgnoreCase(Properties.VISIBILITY_1)){
 				visibility = TagVisibility.PROTECTED;
 			}
 			else{

@@ -9,5 +9,5 @@
 	<dimen name="icon_width">61dp</dimen>
 	<dimen name="icon_small_size">35dp</dimen>
 	<dimen name="profile_picture">150dp</dimen>
-    
+	
 </resources>

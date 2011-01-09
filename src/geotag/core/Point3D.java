@@ -27,6 +27,8 @@
 
 package geotag.core;
 
+import android.location.Location;
+
 public class Point3D {
 	public double x;
 	public double y;
@@ -42,5 +44,11 @@ public class Point3D {
 		x = coordinates[0];
 		y = coordinates[1];
 		z = coordinates[2];
+	}
+	
+	public Point3D(Location location){
+		x = location.getLatitude();
+		y = location.getLongitude();
+		z = location.getAltitude();
 	}
 }

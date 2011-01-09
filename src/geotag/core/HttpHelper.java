@@ -27,8 +27,6 @@
 
 package geotag.core;
 
-import geotag.example.sbickt.Strings;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -109,8 +107,10 @@ public class HttpHelper {
 		HttpResponse serverResponse = client.execute(request);
 		Header headers[] = serverResponse.getAllHeaders();
 		
+		String ignoreCase = Properties.getUrlIndex().substring(0, Properties.getUrlIndex().length() - 1);
+		
 		for(Header h:headers){
-			if(h.getName().equalsIgnoreCase("Location") && h.getValue().equalsIgnoreCase(Strings.getString("SbicktAPI.0").substring(0, Strings.getString("SbicktAPI.0").length() - 1))){
+			if(h.getName().equalsIgnoreCase("Location") && h.getValue().equalsIgnoreCase(ignoreCase)){
 				return;
 			}
 		}

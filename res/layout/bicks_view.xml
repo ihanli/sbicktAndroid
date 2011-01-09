@@ -12,7 +12,6 @@
 	<EditText android:layout_alignParentBottom="true"
 		android:layout_alignParentLeft="true"
 		android:gravity="top"
-		android:textSize="16sp"
 		android:textColor="#bfbfbf"
 		android:layout_height="fill_parent"
 		android:background="@drawable/edit_text"
@@ -20,46 +19,37 @@
 		android:inputType="textMultiLine"
 		android:layout_marginLeft="10dp"
 		android:layout_marginBottom="10dp"
-		android:id="@+id/new_bicks"
-		android:layout_width="300dp" android:layout_marginTop="75dp">
+		android:id="@+id/edit_text_bicks"
+		android:layout_width="fill_parent"
+		android:layout_toLeftOf="@+id/button_bicks"
+		android:layout_below="@+id/radio_group_category"
+		android:layout_marginTop="5dp" android:textSize="24sp" android:maxLength="140" android:hint="Was willst du sagen? Du hast 140 Zeichen!">
 		
 	</EditText>
 	
-	<ImageButton android:id="@+id/category_private"
-		android:src="@drawable/category_private"
-		android:background="@null"
-		android:scaleType="fitCenter"
-		android:layout_height="@dimen/icon_small_size"
-		android:layout_width="@dimen/icon_small_size"
-		android:layout_toRightOf="@+id/new_bicks"
-		android:layout_alignTop="@+id/new_bicks"
-		android:layout_marginTop="10dp"
-		android:layout_marginLeft="10dp">
-	</ImageButton>
-	
-	<ImageButton android:id="@+id/category_friends"
-		android:src="@drawable/category_friends"
-		android:background="@null"
-		android:scaleType="fitCenter"
-		android:layout_height="@dimen/icon_small_size"
-		android:layout_width="@dimen/icon_small_size"
-		android:layout_toRightOf="@+id/new_bicks"
-		android:layout_marginTop="10dp"
-		android:layout_marginLeft="10dp"
-		android:layout_below="@+id/category_private">
-	</ImageButton>
-	
-	<ImageButton android:id="@+id/category_public"
-		android:src="@drawable/category_public"
-		android:background="@null"
-		android:scaleType="fitCenter"
-		android:layout_height="@dimen/icon_small_size"
-		android:layout_width="@dimen/icon_small_size"
-		android:layout_toRightOf="@+id/new_bicks"
-		android:layout_marginTop="10dp"
-		android:layout_marginLeft="10dp"
-		android:layout_below="@+id/category_friends">
-	</ImageButton>
+	<RadioGroup android:orientation="horizontal" android:layout_alignRight="@+id/edit_text_bicks" android:layout_width="wrap_content" android:layout_marginTop="20dp" android:layout_height="wrap_content" android:id="@+id/radio_group_category">
+		
+		<RadioButton android:id="@+id/radio_category_private"
+			android:button="@drawable/radio_category_private"
+			android:layout_height="40dp"
+			android:layout_width="40dp">
+		</RadioButton>
+			
+		<RadioButton android:id="@+id/radio_category_friends"
+			android:button="@drawable/radio_category_friends"
+			android:layout_marginLeft="10dp"
+			android:layout_height="40dp"
+			android:layout_width="40dp">
+		</RadioButton>
+		
+		<RadioButton android:id="@+id/radio_category_public"
+			android:button="@drawable/radio_category_public"
+			android:layout_marginLeft="10dp"
+			android:layout_height="40dp"
+			android:layout_width="40dp">
+		</RadioButton>
+				
+	</RadioGroup>
 	
 	<ImageButton android:id="@+id/button_bicks"
 		android:src="@drawable/button_menu_bicks"
@@ -68,8 +58,7 @@
 		android:layout_height="@dimen/icon_size"
 		android:layout_width="@dimen/icon_size"
 		android:layout_marginLeft="5dp"
-		android:layout_toRightOf="@+id/new_bicks"
-		android:layout_alignBottom="@+id/new_bicks">
+		android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_marginRight="75dp" android:layout_marginBottom="60dp">
 	</ImageButton>
 	
 </RelativeLayout>

@@ -57,7 +57,7 @@ public class MenuView extends RelativeLayout {
 		
 		((ImageButton)this.findViewById(R.id.screenshot)).setOnClickListener(notYetImplementedOnClickListener);		
 		((ImageButton)this.findViewById(R.id.live_view)).setOnClickListener(notYetImplementedOnClickListener);		
-		((ImageButton)this.findViewById(R.id.map_view)).setOnClickListener(notYetImplementedOnClickListener);
+		((ImageButton)this.findViewById(R.id.map_view)).setOnClickListener(mapViewOnClickListener);
 		
 		((ImageButton)this.findViewById(R.id.menu_in)).setOnClickListener(menuInOnClickListener);
 		((ImageButton)this.findViewById(R.id.menu_out)).setOnClickListener(menuOutOnClickListener);
@@ -67,6 +67,13 @@ public class MenuView extends RelativeLayout {
 	private OnClickListener notYetImplementedOnClickListener = new OnClickListener() {
 		public void onClick(View v) {
 			Toast.makeText(getContext(),"Not yet implemented...",Toast.LENGTH_SHORT).show();
+			
+		}
+	};	
+	
+	private OnClickListener mapViewOnClickListener = new OnClickListener() {
+		public void onClick(View v) {
+			getContext().startActivity(new Intent(getContext(), MapViewActivity.class));
 			
 		}
 	};

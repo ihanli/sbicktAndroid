@@ -30,19 +30,15 @@ package geotag.example.sbickt;
 import geotag.core.R;
 
 import java.io.IOException;
-import java.util.zip.Inflater;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 
 
 public class CameraActivity extends Activity implements SurfaceHolder.Callback {
