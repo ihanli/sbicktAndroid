@@ -42,23 +42,39 @@ import org.apache.http.message.BasicNameValuePair;
 import org.junit.Test;
 
 public class SbicktAPITest {
+	@Test
+	public void testLogin() {
+		List<NameValuePair> myData = new ArrayList<NameValuePair>();
+
+		myData.add(new BasicNameValuePair("nickname", "isi"));
+		myData.add(new BasicNameValuePair("password", "sbickt"));
+		
+		try {
+			SbicktAPI.login(myData);
+		}
+		catch (Exception e) {
+			fail("SbicktAPITest -> login: " + e);
+		}
+	}
 
 	@Test
 	public void testNewGeoTag() {
 		List<NameValuePair> myData = new ArrayList<NameValuePair>();
 
-		myData.add(new BasicNameValuePair("sbickerl[owner]", "ismail"));
 		myData.add(new BasicNameValuePair("sbickerl[content]", "test post"));
 		myData.add(new BasicNameValuePair("sbickerl[visibility]", "private"));
-		myData.add(new BasicNameValuePair("geotag[x]", "2.548"));
-		myData.add(new BasicNameValuePair("geotag[y]", "2.548"));
-		myData.add(new BasicNameValuePair("geotag[z]", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[lat]", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[lng]", "2.548"));
+		myData.add(new BasicNameValuePair("geotag[alt]", "2.548"));
 		
 		try {
 			SbicktAPI.newGeoTag(myData);
 		}
+		catch(NullPointerException e){
+			fail(e.toString());
+		}
 		catch (Exception e) {
-			fail("SbicktAPITest -> newGeoTag: No data from server (started?).");
+			fail("SbicktAPITest -> newGeoTag: " + e.toString());
 		}
 	}
 
