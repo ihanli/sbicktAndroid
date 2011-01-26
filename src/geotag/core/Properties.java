@@ -7,10 +7,11 @@ public class Properties {
 	public static final String VISIBILITY_2 = "PUBLIC";
 	
 	public static final String URL_PROTOCOL = "http";
-	public static final String URL_HOST = "sbickt.heroku.com";
+	public static final String URL_HOST = "10.0.0.1";//sbickt.heroku.com";
 	public static final String URL_FOLDER_INDEX = "/geotags/";
 	public static final String URL_FOLDER_LIST = "/geotags/list.kml";
-	public static final int URL_PORT = 80;
+	public static final String URL_FOLDER_LOGIN = "/users/login";
+	public static final int URL_PORT = 3000;//80;
 	
 	public static final String getUrl(){
 		return URL_PROTOCOL + "://" + URL_HOST + ":" + Integer.toString(URL_PORT);
