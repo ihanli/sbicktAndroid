@@ -40,10 +40,19 @@ import java.util.Queue;
 import org.apache.http.NameValuePair;
 
 public class SbicktAPI {
+	public static void login(List<NameValuePair> userData) throws Exception{
+		HttpHelper httpConnection = HttpHelper.getInstance(Properties.getUrl() + Properties.URL_FOLDER_LOGIN);
+		
+		if(!httpConnection.POSTRequest(userData)){
+			throw new Exception("SbicktAPI -> login: Failed to login");
+		}
+	}
+	
 	public static void newGeoTag(List<NameValuePair> geoTagData) throws Exception{
 		String url = Properties.getUrlIndex();
-		HttpHelper httpConnection = new HttpHelper(url);
 		
+		HttpHelper httpConnection = HttpHelper.getInstance(url);
+			
 		if(!httpConnection.POSTRequest(geoTagData)){
 			throw new Exception("SbicktAPI -> newGeoTag: Failed to add new geotag");
 		}
@@ -54,7 +63,7 @@ public class SbicktAPI {
 		Queue<GeoTag> listOfGeoTags = new LinkedList<GeoTag>();
 		Exception up = new Exception("SbicktAPI -> getGeoTags: No data from server");
 		
-		kp.requestKml(Properties.URL_PROTOCOL, Properties.URL_HOST, Properties.URL_PORT, Properties.URL_FOLDER_LIST + "?coordinates[x]=" + me.x + "&coordinates[y]=" + me.y);
+		kp.requestKml(Properties.URL_PROTOCOL, Properties.URL_HOST, Properties.URL_PORT, Properties.URL_FOLDER_LIST + "?lat=" + me.x + "&lng=" + me.y);
 		
 		listOfGeoTags = kp.generateObjects();
 		
@@ -70,9 +79,8 @@ public class SbicktAPI {
 	}
 	
 	public static void deleteGeoTag(Integer geoTagId) throws Exception{
-//		String deleteURL = Strings.getString("SbicktAPI.2") + geoTagId.toString();
 		String url = Properties.getUrlIndex();
-		HttpHelper httpConnection = new HttpHelper(url, geoTagId.toString());
+		HttpHelper httpConnection = HttpHelper.getInstance(url, geoTagId.toString());
 		
 		if(!httpConnection.DELETERequest()){
 			throw new Exception("SbicktAPI -> deleteGeoTag: Failed to delete geotag");

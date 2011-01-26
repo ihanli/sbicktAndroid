@@ -100,8 +100,8 @@ public class KmlParser {
 			coordinates = pointElement.getElementsByTagName("coordinates").item(0).getFirstChild().getNodeValue();
 
 			try {
-				geoData[0] = Double.parseDouble(coordinates.substring(0, coordinates.indexOf(",")));
-				geoData[1] = Double.parseDouble(coordinates.substring(coordinates.indexOf(",") + 1, coordinates.lastIndexOf(",")));
+				geoData[1] = Double.parseDouble(coordinates.substring(0, coordinates.indexOf(",")));
+				geoData[0] = Double.parseDouble(coordinates.substring(coordinates.indexOf(",") + 1, coordinates.lastIndexOf(",")));
 				geoData[2] = Double.parseDouble(coordinates.substring(coordinates.lastIndexOf(",") + 1, coordinates.length()));
 			}
 			catch (NumberFormatException e) {
